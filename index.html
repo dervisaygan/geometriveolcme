@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+        }
+
+        .uret {
+            margin-top: 20px;
+            background-color: transparent;
+            border: none;
+            font-weight: bold;
+            font-size: 22px;
+            cursor: pointer;
+            border: 2px solid #212121;
+            padding: 10px 20px;
+            transition: .4s;
+
+        }
+
+        .uret:hover {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .setdiv {
+            width: 90%;
+            margin-left: 5%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 80px;
+            padding-left: 80px;
+        }
+        .zfc{
+            position:fixed;
+            right: 0;
+            bottom: 0;
+            padding: 10px;
+            line-height: 30px;
+        }
+        @media screen and (max-width:600px) {
+            .setdiv {
+            width: 90%;
+            margin-left: 5%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+            padding-right: 80px;
+            padding-left: 80px;
+        }
+        .setdiv div{
+margin-bottom: 230px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <button class="uret">Şekil Üret</button>
+    </center>
+
+    <div class="setdiv">
+
+    </div>
+
+    <script>
+        var color = () => {
+            var r1 = Math.random() * 255;
+            var r2 = Math.random() * 255;
+            var r3 = Math.random() * 255;
+            return `rgba(${r1},${r2},${r3})`
+        }
+        const crf = ()=>{
+            document.querySelectorAll('.appenddiv').forEach(dd => {
+                dd.remove()
+            });
+
+            var c = document.createElement('div')
+            c.classList.add('appenddiv')
+            var r1 = Math.random() * 180
+            c.setAttribute('style', `
+            width: 0;
+            border-bottom:120px solid ${color()}; 
+             border-left:60px solid transparent; 
+              border-right:60px solid transparent;
+              transform: rotate(${r1}deg);
+            `)
+            document.querySelector('.setdiv').appendChild(c)
+
+
+            var z = document.createElement('div')
+            z.classList.add('appenddiv')
+            var r2 = Math.random() * 180
+            var w1 = Math.random() * 250
+            var w2 = Math.random() * 250
+            z.setAttribute('style', `
+            width: ${w1}px;
+            height: ${w2}px;
+            background-color:${color()};
+              transform: rotate(${r2}deg);
+            `)
+            document.querySelector('.setdiv').appendChild(z)
+
+
+            var f = document.createElement('div')
+            f.classList.add('appenddiv')
+            var r2 = Math.random() * 180
+            var w1 = Math.random() * 250
+            var w2 = Math.random() * 250
+            f.setAttribute('style', `
+            width: ${w1}px;
+  height: ${w2}px;
+  background: red;
+  transform: perspective(10px) rotateX(1deg);
+  margin: 50px;
+            background-color:${color()};
+            `)
+            document.querySelector('.setdiv').appendChild(f)
+        }
+        document.querySelector('.uret').addEventListener('click', () => {
+            crf()
+
+        })
+        crf()
+    </script>
+<div class="zfc">Muhammet Derviş Aygan <br> Geometri ve Ölçme Öğretimi
+</div>
+</body>
+
+</html>
