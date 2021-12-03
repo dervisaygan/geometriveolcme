@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammet Derviş Aygan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main-item {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+        }
+
+        .main-item img {
+            position: relative;
+            width: 200px;
+            height: 40px;
+
+        }
+
+        .main-item .i1 {
+            position: absolute;
+            transform: rotate(15deg);
+        }
+
+        .main-item .i2 {
+            position: absolute;
+            top: 70px;
+            transform: rotate(15deg);
+        }
+        .zfc{
+            position:fixed;
+            bottom: 0;
+            right: 0;
+            padding: 15px;
+            line-height: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="layout">
+
+        <div style="clear: both;"></div>
+    </div>
+
+    <script>
+        for (let i = 0; i < 20; i++) {
+            var rndz = Math.round(Math.random())
+            if (rndz == 0) {
+                var c = document.createElement('div')
+                c.classList.add('main-item')
+                var rnd = Math.random() * 45
+                var rnd2 = Math.random() * 45
+                c.innerHTML = `
+            <img src="dogru.png" style="position:absolute;
+            transform: rotate(${rnd}deg);"">
+            <img src="dogru.png" style=" 
+            position:absolute;
+            top: 70px;
+            transform: rotate(${rnd2}deg);">
+            `
+                document.querySelector('.layout').appendChild(c)
+            }else{
+                var c = document.createElement('div')
+                c.classList.add('main-item')
+                var rnd = Math.random() * 45
+                var rnd2 = Math.random() * 45
+                c.innerHTML = `
+            <img src="dogru.png" style="position:absolute;
+            transform: rotate(${rnd}deg);"">
+            <img src="dogru.png" style=" 
+            position:absolute;
+            top: 70px;
+            transform: rotate(${rnd}deg);">
+            `
+                document.querySelector('.layout').appendChild(c)
+            }
+        }
+    </script>
+    <div class="zfc">Muhammet Derviş Aygan <br>Geometri ve Ölçme Öğretimi
+    </div>
+</body>
+
+</html>
