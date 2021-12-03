@@ -65,8 +65,8 @@
             if (rndz == 0) {
                 var c = document.createElement('div')
                 c.classList.add('main-item')
-                var rnd = Math.random() * 45
-                var rnd2 = Math.random() * 45
+                var rnd = Math.random() * 300
+                var rnd2 = Math.random() * 300
                 c.innerHTML = `
             <img src="dogru.png" style="position:absolute;
             transform: rotate(${rnd}deg);"">
@@ -79,8 +79,21 @@
             }else{
                 var c = document.createElement('div')
                 c.classList.add('main-item')
-                var rnd = Math.random() * 45
-                var rnd2 = Math.random() * 45
+                var rnd = Math.random() * 80
+                var rnd2 = Math.random() * 80
+                c.innerHTML = `
+            <img src="dogru.png" style="position:absolute;
+            transform: rotate(${rnd}deg);"">
+            <img src="dogru.png" style=" 
+            position:absolute;
+            top: 70px;
+            transform: rotate(${rnd}deg);">
+            `
+                document.querySelector('.layout').appendChild(c)
+                var c = document.createElement('div')
+                c.classList.add('main-item')
+                var rnd = Math.random() * -100
+                var rnd2 = Math.random() * -100
                 c.innerHTML = `
             <img src="dogru.png" style="position:absolute;
             transform: rotate(${rnd}deg);"">
