@@ -105,9 +105,9 @@ margin-bottom: 230px;
             var r1 = Math.random() * 180
             c.setAttribute('style', `
             width: 0;
-            border-bottom:120px solid ${color()}; 
-             border-left:60px solid transparent; 
-              border-right:60px solid transparent;
+            border-bottom:${Math.random() * 120}px solid ${color()}; 
+             border-left:${Math.random() * 60}px solid transparent; 
+              border-right:${Math.random() * 60}px solid transparent;
               transform: rotate(${r1}deg);
             `)
             document.querySelector('.setdiv').appendChild(c)
